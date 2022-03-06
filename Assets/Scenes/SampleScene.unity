@@ -579,6 +579,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1625064502}
   - component: {fileID: 1625064501}
+  - component: {fileID: 1625064504}
+  - component: {fileID: 1625064503}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -601,6 +603,9 @@ MonoBehaviour:
   sphere: {fileID: 7457956523056152370, guid: f5ebda0db54cb914fa8d91f818a55a5e, type: 3}
   Pole: {fileID: 5514369957504782718, guid: fa45ae8bbfffabe459b8bd7a6fe199f2, type: 3}
   board: {fileID: 243227312}
+  materials:
+  - {fileID: 2100000, guid: 766c48116846cac45a520586e61b875f, type: 2}
+  - {fileID: 2100000, guid: 6557f7d44f167f64ca4070e7c774ad08, type: 2}
 --- !u!4 &1625064502
 Transform:
   m_ObjectHideFlags: 0
@@ -616,3 +621,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1625064503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625064500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ea5f72c11a7d94ea94d93c3c71c279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidGameId: 4645883
+  _iOSGameId: 4645882
+  _testMode: 0
+--- !u!114 &1625064504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625064500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8bcdfafff62f6e43bdb8b9d27bd5d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidAdUnitId: Interstitial_Android
+  _iOsAdUnitId: Interstitial_iOS
