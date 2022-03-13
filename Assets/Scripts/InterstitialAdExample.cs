@@ -45,7 +45,7 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
 
     public void OnUnityAdsShowFailure(string adUnitId, UnityAdsShowError error, string message)
     {
-        Debug.Log($"Error showing Ad Unit {adUnitId}: {error.ToString()} - {message}");
+        Debug.Log($"Error showing Ad Unit {adUnitId}: {error} - {message}");
         // Optionally execute code if the Ad Unit fails to show, such as loading another ad.
     }
 

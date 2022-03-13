@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
     private readonly int[,] onStick = new int[4, 4];
 
     private InterstitialAdExample interstitialAd;
-    private bool stone = true;
+    private int stone = 1;
     const int distance = 10;
     const int duration = 3;
 
@@ -30,8 +31,7 @@ public class GameManager : MonoBehaviour
             for (int j = 0; j < 4; j++)
             {
                 Vector3 vector = new(1.5f - i, 1.5f, -1.5f + j);
-                GameObject obj = Instantiate(Pole, vector, Quaternion.identity);
-                obj.transform.SetParent(board);
+                Instantiate(Pole, vector, Quaternion.identity).transform.SetParent(board);
             }
         }
     }
@@ -53,26 +53,38 @@ public class GameManager : MonoBehaviour
                 if (onStick[z, x] < 4)
                 {
                     vector.y = 8;
+
                     GameObject game = Instantiate(sphere, vector, Quaternion.identity);
-                    if (stone)
-                    {
-                        game.GetComponent<Renderer>().material = materials[0];
-                        field[onStick[z, x]++, z, x] = 1;
-                    }
+                    game.GetComponent<Renderer>().material = materials[stone - 1];
+
+                    field[onStick[z, x], z, x] = stone;
+                    if (stone == 1)
+                        stone++;
                     else
-                    {
-                        game.GetComponent<Renderer>().material = materials[1];
-                        field[onStick[z, x]++, z, x] = 2;
-                    }
-                    stone = !stone;
+                        stone--;
+                    Jadge(onStick[z, x]++, z, x, stone);
                 }
-                
-                interstitialAd.LoadAd();
-                interstitialAd.ShowAd();
-                
+
+                //interstitialAd.LoadAd();
+                //interstitialAd.ShowAd();
+
             }
         }
-        
-
+    }
+    private void Jadge(int y, int z, int x, int stone)
+    {
+        bool[] state = new bool[3];
+        for (int i = 0; i < 4; i++)
+        {
+            if (!(field[i, z, x] == stone + 1))
+                state[0] = true;
+            if (!(field[y, i, x] == stone + 1))
+                state[1] = true;
+            if (!(field[y, z, i] == stone + 1))
+                state[2] = true;
+            if(state[0] == state[1] == state[2] == true)
+                return;
+        }
+        SceneManager.LoadScene("result");
     }
 }
