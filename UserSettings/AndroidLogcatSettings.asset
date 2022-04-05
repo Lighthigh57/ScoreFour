@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "ZY3223JMD8",
         "name": "com.LightLuke.ScoreFour",
-        "processId": 11408,
+        "processId": 14078,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,30 @@
             "deviceId": "ZY3223JMD8",
             "name": "com.LightLuke.ScoreFour",
             "processId": 11408,
+            "exited": true
+        },
+        {
+            "deviceId": "ZY3223JMD8",
+            "name": "com.android.launcher3",
+            "processId": 4359,
+            "exited": true
+        },
+        {
+            "deviceId": "ZY3223JMD8",
+            "name": "com.android.launcher3",
+            "processId": 22267,
+            "exited": false
+        },
+        {
+            "deviceId": "ZY3223JMD8",
+            "name": "com.LightLuke.ScoreFour",
+            "processId": 12579,
+            "exited": false
+        },
+        {
+            "deviceId": "ZY3223JMD8",
+            "name": "com.LightLuke.ScoreFour",
+            "processId": 14078,
             "exited": false
         }
     ],
